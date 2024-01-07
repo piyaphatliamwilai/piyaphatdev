@@ -1,7 +1,6 @@
 'use client'
 import { useState } from "react";
 import {Tabs, Tab, Card, CardBody, Checkbox, Slider, Button } from "@nextui-org/react";
-import CalculateScore from "../components/calculate_score";
 
 export default function MakeX() {
     // Red team
