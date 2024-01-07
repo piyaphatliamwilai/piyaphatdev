@@ -1,2 +1,2 @@
-# piyaphat.dev
-#### Powered by next.js
+# piyaphat.xyz
+#### powered by nextui and nextjs

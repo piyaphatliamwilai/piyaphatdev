@@ -120,9 +120,9 @@ export default function MakeX() {
                                         Calculate Score
                                     </Button>
                                 </div>
-                                <div className="flex min-w-max justify-between">
-                                    <h1 className="text-9xl">{realRedScore}</h1>
-                                    <h1 className="text-9xl">{realBlueScore}</h1>
+                                <div className="flex justify-between px-48">
+                                    <h1 className="text-9xl text-red-500">{realRedScore}</h1>
+                                    <h1 className="text-9xl text-blue-500">{realBlueScore}</h1>
                                 </div>
                             </div>
                         </Tab>
