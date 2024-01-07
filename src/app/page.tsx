@@ -1,13 +1,10 @@
-import Navbar from "./components/navbar";
-import Hero from "./components/hero";
+import StartPage from "./components/start";
 
 export default function Home() {
   return (
     <main>
-      <div className="flex min-h-screen flex-col bg-slate-900">
-        <Navbar></Navbar>
-        <Hero></Hero>
-      </div>
+      <StartPage>
+      </StartPage>
   </main>
   )
 }
