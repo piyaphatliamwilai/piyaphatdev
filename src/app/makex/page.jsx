@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import { useState } from "react";
 import {Tabs, Tab, Card, CardBody, Checkbox, Slider, Button } from "@nextui-org/react";
 
@@ -12,6 +12,7 @@ export default function MakeX() {
     const [ shootCentralFlag, setShootCentralFlag ] = useState(0)
     const [ flag, setFlag ] = useState(0)
     const [ opponentSideFlag, setOpponentSideFlag ] = useState(0)
+    const [ redPenalty, setRedPenalty ] = useState(0)
     // Blue team
     const [ makeX_b, setMakeX_b ] = useState(false)
     const [ block_b, setBlock_b ] = useState(0)
@@ -21,6 +22,8 @@ export default function MakeX() {
     const [ shootCentralFlag_b, setShootCentralFlag_b ] = useState(0)
     const [ flag_b, setFlag_b ] = useState(0)
     const [ opponentSideFlag_b, setOpponentSideFlag_b ] = useState(0)
+    const [ bluePenalty, setBluePenalty ] = useState(0)
+    // what the fuck
     const [ realRedScore, setRedReal ] = useState(0)
     const [ realBlueScore, setBlueReal ] = useState(0)
     let red_score = 0
@@ -51,6 +54,7 @@ export default function MakeX() {
         if (makeX) {
             setRedScore(red_score + 150)
         }
+        setRedScore(red_score - (redPenalty * 30))
         // Blue calculation
         if (block_b == 5 || cone_b == 5) {
             setBlueScore(100)
@@ -65,6 +69,7 @@ export default function MakeX() {
         if (makeX_b) {
             setBlueScore(blue_score + 150)
         }
+        setBlueScore(blue_score - (bluePenalty * 30))
         setRedReal(red_score)
         setBlueReal(blue_score)
     }
@@ -90,6 +95,7 @@ export default function MakeX() {
                                 <Slider value={shootCentralFlag} label="Middle flag shot" onChange={setShootCentralFlag} disableThumbScale={false} size="lg" step={1} maxValue={6} minValue={0} defaultValue={0} className="max-w-md light"/>
                                 <Slider value={flag}label="Flags hanged" onChange={setFlag} disableThumbScale={false} size="lg" step={1} maxValue={2} minValue={0} defaultValue={0} className="max-w-md light"/>
                                 <Slider value={opponentSideFlag} label="Opponent side flags hanged" onChange={setOpponentSideFlag} disableThumbScale={false} size="lg" step={1} maxValue={2} minValue={0} defaultValue={0} className="max-w-md light"/>
+                                <Slider value={redPenalty} label="Penalty" onChange={setRedPenalty} disableThumbScale={false} size="lg" step={1} maxValue={5} minValue={0} defaultValue={0} className="max-w-md light"/>
                                 <Checkbox size="lg" value={makeX} onValueChange={setMakeX}>
                                     MakeX Alphabetical Order
                                 </Checkbox>
@@ -107,6 +113,7 @@ export default function MakeX() {
                                 <Slider value={shootCentralFlag_b}label="Middle flag shot" onChange={setShootCentralFlag_b} disableThumbScale={false} size="lg" step={1} maxValue={6} minValue={0} defaultValue={0.4} className="max-w-md light"/>
                                 <Slider value={flag_b}label="Flags hanged" onChange={setFlag_b} disableThumbScale={false} size="lg" step={1} maxValue={2} minValue={0} defaultValue={0.4} className="max-w-md light"/>
                                 <Slider value={opponentSideFlag_b}label="Opponent side flags hanged" onChange={setOpponentSideFlag_b} disableThumbScale={false} size="lg" step={1} maxValue={2} minValue={0} defaultValue={0.4} className="max-w-md light"/>
+                                <Slider value={bluePenalty} label="Penalty" onChange={setBluePenalty} disableThumbScale={false} size="lg" step={1} maxValue={5} minValue={0} defaultValue={0} className="max-w-md light"/>
                                 <Checkbox size="lg" isSelected={makeX_b} onValueChange={setMakeX_b}>
                                     MakeX Alphabetical Order
                                 </Checkbox>
