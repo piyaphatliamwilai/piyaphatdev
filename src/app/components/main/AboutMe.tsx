@@ -24,7 +24,7 @@ const AboutMe: React.FC = () => {
     });
 
     return (
-        <div className="min-h-[140vh] min-w-screen bg-zinc-950 rounded-[64px] border-white border-t-4 border-opacity-20 px-64 pt-64 pb-8"> 
+        <div className="min-h-[140vh] min-w-screen bg-zinc-950 rounded-[64px] border-white border-t-4 border-opacity-20 px-64 pt-64 pb-8 text-white"> 
             <div className="grid h-full grid-cols-2 gap-8">
                 <div className="relative">
                     <motion.h1 
